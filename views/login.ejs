@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login to <%=shopData.shopName%></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <!-- Taskbar Header -->
+    <div class="taskbar"> 
+      <a href="/">Home</a>
+      <a href="users/login">Login</a>
+      <a href="users/logout">Logout</a>
+      <a href="/about">About Us</a>
+      <a href="games/list">Games List</a>
+    </div>
+
+    <!-- Main Content -->
+    <h1>Login to <%=shopData.shopName%></h1>
+    <form method="POST" action="loggedin">
+        <p>Username: <input id="username" type="text" name="username" required /></p>
+        <p>Password: <input id="password" type="password" name="password" required /></p>
+        <input type="submit" value="Login" />
+    </form>
+  </body>
+</html>

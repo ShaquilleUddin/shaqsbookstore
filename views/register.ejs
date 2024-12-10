@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register for <%=shopData.shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <!-- Taskbar Header -->
+    <div class="taskbar"> 
+      <a href="/">Home</a>
+      <a href="users/login">Login</a>
+      <a href="users/logout">Logout</a>
+      <a href="/about">About Us</a>
+      <a href="games/list">Games List</a>
+    </div>
+
+    <!-- Main Content -->
+    <h1>Register for <%=shopData.shopName%></h1>
+    <form method="POST" action="registered">
+        <p>Username: <input id="username" type="text" name="username" /></p>
+        <p>First name: <input id="first" type="text" name="first" /></p>
+        <p>Last name: <input id="last" type="text" name="last"/></p>
+        <p>Email: <input id="email" type="text" name="email"/></p> 
+        <p>Password: <input id="password" type="text" name="password" /></p>
+        <input type="submit" value="Register" />
+    </form>
+  </body>
+</html>

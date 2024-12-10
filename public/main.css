@@ -1,0 +1,170 @@
+/* Import a "gamer-like" font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: black;
+    color: white; /* Default text color for better contrast on a black background */
+    font-family: 'Press Start 2P', cursive; /* Apply gamer font to the entire body */
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive; /* Apply gamer font to the heading */
+    font-size: 23px;
+    color: blue; /* Blue for h1 headings */
+    margin-bottom: 20px; /* Add space below h1 */
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive; /* Apply gamer font to the heading */
+    font-size: 20px;
+    color: yellow; /* Yellow for h2 headings */
+    margin-bottom: 20px; /* Add space below h2 */
+}
+
+p, li {
+    font-family: 'Press Start 2P', cursive; /* Apply gamer font to the paragraphs */
+    color: white; /* Ensure paragraphs and list items are readable on a black background */
+}
+
+ul {
+    padding-left: 20px; /* Add some left padding to align the list */
+}
+
+li {
+    margin-bottom: 10px; /* Add space between each list item */
+    line-height: 1.8; /* Increase line height for more vertical spacing */
+}
+
+/* Links styling */
+a:link {
+    color: blue; /* Blue for unvisited links */
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* visited link */
+a:visited {
+    color: darkblue; /* Slightly darker blue for visited links */
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* mouse over link */
+a:hover {
+    color: black; /* Black text color on hover for contrast */
+    text-decoration: none;
+    background-color: yellow; /* Highlight link background in yellow */
+    padding: 5px;
+}
+
+/* selected link */
+a:active {
+    color: yellow; /* Yellow for active links */
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Taskbar styles */
+.taskbar {
+    background-color: blue; /* Blue background for the taskbar */
+    color: yellow; /* Yellow text in the taskbar */
+    padding: 10px; /* Add some spacing inside the taskbar */
+    display: flex; /* Align items horizontally */
+    justify-content: space-around; /* Space items evenly across the width */
+    align-items: center; /* Center items vertically */
+}
+
+.taskbar a {
+    color: yellow; /* Yellow links inside the taskbar */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Add some padding around links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.taskbar a:hover {
+    color: black; /* Text turns black when hovered */
+    background-color: yellow; /* Background turns yellow when hovered */
+    text-decoration: underline; /* Underline links on hover for better feedback */
+}
+
+/* Main menu links below the taskbar */
+p a {
+    color: blue; /* Default color for main menu links */
+    text-decoration: none;
+    padding: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for main menu links */
+}
+
+/* Hover effect for main menu links */
+p a:hover {
+    color: black; /* Text turns black on hover */
+    background-color: yellow; /* Background turns yellow on hover */
+    text-decoration: underline; /* Underline links on hover for better feedback */
+}
+
+/* Style for input fields (search boxes) to match the website theme */
+input[type="text"] {
+  background-color: black; /* Black background to match the overall theme */
+  color: yellow; /* Yellow text to match the theme */
+  font-family: 'Press Start 2P', cursive; /* Apply gamer font */
+  font-size: 16px; /* Set the font size */
+  border: 2px solid blue; /* Blue border to match the theme */
+  padding: 10px; /* Add some padding for a better user experience */
+  width: 250px; /* Set a width for the input fields */
+  margin: 10px 0; /* Add space between input fields and surrounding elements */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Focus effect for input fields */
+input[type="text"]:focus {
+  background-color: yellow; /* Change background to yellow when focused */
+  color: black; /* Text turns black when focused */
+  border-color: black; /* Border turns black when focused */
+}
+
+/* Style for password input field to match the website theme */
+input[type="password"] {
+  background-color: black; /* Black background to match the overall theme */
+  color: yellow; /* Yellow text to match the theme */
+  font-family: 'Press Start 2P', cursive; /* Apply gamer font */
+  font-size: 16px; /* Set the font size */
+  border: 2px solid blue; /* Blue border to match the theme */
+  padding: 10px; /* Add some padding for better user experience */
+  width: 250px; /* Set a width for the input fields */
+  margin: 10px 0; /* Add space between input fields and surrounding elements */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Focus effect for password input fields */
+input[type="password"]:focus {
+  background-color: yellow; /* Change background to yellow when focused */
+  color: black; /* Text turns black when focused */
+  border-color: black; /* Border turns black when focused */
+}
+
+/* Style for the submit button to match the theme */
+input[type="submit"] {
+  background-color: blue; /* Blue background for the submit button */
+  color: yellow; /* Yellow text color */
+  font-family: 'Press Start 2P', cursive; /* Apply gamer font */
+  font-size: 16px; /* Adjust font size */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Add padding around the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Button hover effect */
+input[type="submit"]:hover {
+  background-color: yellow; /* Yellow background on hover */
+  color: black; /* Text color changes to black on hover */
+}
+
+/* Button active effect */
+input[type="submit"]:active {
+  background-color: darkblue; /* Dark blue background when clicked */
+  color: yellow; /* Text stays yellow when clicked */
+}
