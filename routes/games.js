@@ -87,7 +87,7 @@ router.get('/addgame', redirectLogin, function (req, res, next) {
 });
 
 // Route to handle adding a new game to the database
-router.post('/gamesadded', redirectLogin, function (req, res, next) {
+router.post('/gameadded', redirectLogin, function (req, res, next) {
     // Saving data in the database
     let sqlquery = "INSERT INTO games (name, price) VALUES (?,?)";
     // Execute SQL query
