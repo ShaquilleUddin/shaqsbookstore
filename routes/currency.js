@@ -35,7 +35,7 @@ router.post("/currencyconverted", function (req, res, next) {
                     <p>${amount} ${sourceCurrency} is equal to ${convertedAmount} ${targetCurrency}.</p>
                     <p>Current exchange rate: 1 ${sourceCurrency} = ${exchangeRate} ${targetCurrency}</p>
                     <br><br>
-                    <a href="/currency">Back to Currency Converter</a>
+                    <a href="/currency/currencyconvert">Back to Currency Converter</a>
                 `);
             } else {
                 res.send("Error fetching currency data. Please try again.");
