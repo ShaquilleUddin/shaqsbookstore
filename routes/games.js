@@ -13,7 +13,7 @@ const router = express.Router();
 
 // Route to render the search page
 router.get('/search', function (req, res, next) {
-    res.render("search.ejs");
+    res.render("search.ejs", { shopData: { shopName: "Shaq's Game Store" } });
 });
 
 // Route to render the search results page
@@ -25,7 +25,11 @@ router.get('/search_result', function (req, res, next) {
         if (err) {
             next(err);
         }
-        res.render("list.ejs", { availableGames: result });
+        res.render("list.ejs", {
+            availableGames: result,
+            sortBy: 'default', // Default sorting option for search results
+            shopData: { shopName: "Shaq's Game Store" }
+        });
     });
 });
 
@@ -61,7 +65,8 @@ router.get('/list', redirectLogin, function (req, res, next) {
         } else {
             res.render("list.ejs", {
                 availableGames: result,
-                sortBy: sortBy // Pass current sort option to the template
+                sortBy: sortBy, // Pass current sort option to the template
+                shopData: { shopName: "Shaq's Game Store" }
             });
         }
     });
@@ -69,7 +74,7 @@ router.get('/list', redirectLogin, function (req, res, next) {
 
 // Route to render the add game form
 router.get('/addgame', function (req, res, next) {
-    res.render('addgame.ejs');
+    res.render('addgame.ejs', { shopData: { shopName: "Shaq's Game Store" } });
 });
 
 // Route to handle adding a new game to the database
@@ -94,7 +99,10 @@ router.get('/bargaingames', function (req, res, next) {
         if (err) {
             next(err);
         }
-        res.render("bargains.ejs", { availableGames: result });
+        res.render("bargains.ejs", {
+            availableGames: result,
+            shopData: { shopName: "Shaq's Game Store" }
+        });
     });
 });
 
