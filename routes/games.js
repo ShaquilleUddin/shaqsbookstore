@@ -20,16 +20,17 @@ router.get('/search', function (req, res, next) {
 router.get('/search_result', function (req, res, next) {
     // Search the database
     let sqlquery = "SELECT * FROM games WHERE name LIKE '%" + req.query.search_text + "%'"; // query database to get all the games
-    // execute sql query
+    // Execute SQL query
     db.query(sqlquery, (err, result) => {
         if (err) {
             next(err);
+        } else {
+            res.render("list.ejs", {
+                availableGames: result,
+                sortBy: 'default', // Ensure sortBy is always defined
+                shopData: { shopName: "Shaq's Game Store" }
+            });
         }
-        res.render("list.ejs", {
-            availableGames: result,
-            sortBy: 'default', // Default sorting option for search results
-            shopData: { shopName: "Shaq's Game Store" }
-        });
     });
 });
 
@@ -79,9 +80,9 @@ router.get('/addgame', function (req, res, next) {
 
 // Route to handle adding a new game to the database
 router.post('/gamesadded', function (req, res, next) {
-    // saving data in database
+    // Saving data in database
     let sqlquery = "INSERT INTO games (name, price) VALUES (?,?)";
-    // execute sql query
+    // Execute SQL query
     let newrecord = [req.body.name, req.body.price];
     db.query(sqlquery, newrecord, (err, result) => {
         if (err) {
