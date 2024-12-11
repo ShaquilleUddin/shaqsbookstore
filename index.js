@@ -57,7 +57,7 @@ db.connect((err) => {
 global.db = db;
 
 // Define our application-specific data
-app.locals.shopData = { shopName: "Shaq's Game Shop" };
+app.locals.shopData = { shopName: "Shaq's Game Store" };
 
 // Load the route handlers
 const mainRoutes = require("./routes/main");
