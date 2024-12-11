@@ -1,25 +1,33 @@
 // redirectLogin middleware function to check if the user is logged in or not
-// Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
 const redirectLogin = (req, res, next) => {
     if (!req.session.userId) {
-        res.redirect('/users/login'); // redirect to the login page
+        let loginPath;
+        
+        // Check if we are running on localhost or production
+        if (req.get('host').includes('localhost')) {
+            loginPath = '/users/login'; // For localhost
+        } else {
+            loginPath = '/usr/159/users/login'; // For production
+        }
+
+        res.redirect(loginPath); // Redirect to the appropriate login page
     } else {
-        next(); // move to the next middleware function
+        next(); // Move to the next middleware function
     }
 };
 
 const express = require("express");
 const router = express.Router();
 
-// Route to render the search page
-router.get('/search', function (req, res, next) {
+// Route to render the search page, requires login
+router.get('/search', redirectLogin, function (req, res, next) {
     res.render("search.ejs", { shopData: { shopName: "Shaq's Game Store" } });
 });
 
 // Route to render the search results page
 router.get('/search_result', function (req, res, next) {
     // Search the database
-    let sqlquery = "SELECT * FROM games WHERE name LIKE '%" + req.query.search_text + "%'"; // query database to get all the games
+    let sqlquery = "SELECT * FROM games WHERE name LIKE '%" + req.query.search_text + "%'"; // Query database to get all the games
     // Execute SQL query
     db.query(sqlquery, (err, result) => {
         if (err) {
@@ -73,14 +81,14 @@ router.get('/list', redirectLogin, function (req, res, next) {
     });
 });
 
-// Route to render the add game form
-router.get('/addgame', function (req, res, next) {
+// Route to render the add game form, requires login
+router.get('/addgame', redirectLogin, function (req, res, next) {
     res.render('addgame.ejs', { shopData: { shopName: "Shaq's Game Store" } });
 });
 
 // Route to handle adding a new game to the database
-router.post('/gamesadded', function (req, res, next) {
-    // Saving data in database
+router.post('/gamesadded', redirectLogin, function (req, res, next) {
+    // Saving data in the database
     let sqlquery = "INSERT INTO games (name, price) VALUES (?,?)";
     // Execute SQL query
     let newrecord = [req.body.name, req.body.price];
@@ -88,13 +96,13 @@ router.post('/gamesadded', function (req, res, next) {
         if (err) {
             next(err);
         } else {
-            res.send('This game is added to database, name: ' + req.body.name + ' price ' + req.body.price);
+            res.send('This game is added to the database, name: ' + req.body.name + ' price ' + req.body.price);
         }
     });
 });
 
-// Route to render bargain games (price < 20)
-router.get('/bargaingames', function (req, res, next) {
+// Route to render bargain games (price < 20), requires login
+router.get('/bargaingames', redirectLogin, function (req, res, next) {
     let sqlquery = "SELECT * FROM games WHERE price < 20";
     db.query(sqlquery, (err, result) => {
         if (err) {
