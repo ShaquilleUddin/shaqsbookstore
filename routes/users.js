@@ -19,10 +19,12 @@ const saltRounds = 10
 // Import express-validator module
 const { check, validationResult } = require('express-validator');
 
+// Route to render the registration page
 router.get('/register', function (req, res, next) {
     res.render('register.ejs')                                                               
 })    
 
+// Route to handle user registration
 router.post('/registered', [check('email').isEmail()], function (req, res) {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -63,7 +65,7 @@ router.post('/registered', [check('email').isEmail()], function (req, res) {
 
 // List all the users without showing any passwords
 router.get('/list', redirectLogin, function (req, res) {
-    // Get user data without the hashed passowrd 
+    // Get user data without the hashed password 
     let sqlquery = "SELECT username, first_name, last_name, email FROM users" // Exclude the hashedPassword
     db.query(sqlquery, (err, result) => {
         if (err) {
@@ -93,7 +95,12 @@ router.post('/loggedin', function (req, res, next) {
 
         // Checking if the user is found
         if (results.length === 0) {
-            return res.send('Login failed: Username not found.'); // This is if the user not found
+            return res.send(`
+                <h2>Login failed: Username not found.</h2>
+                <form action="${req.headers.referer || './login'}" method="get">
+                    <button type="submit">Go Back</button>
+                </form>
+            `); // Add a button to return to the previous page
         }
 
         // Get the hashed password from the database
@@ -118,7 +125,12 @@ router.post('/loggedin', function (req, res, next) {
             }
             else {
                 // Login was failed
-                return res.send('Login was failed: Your password was incorrect.');
+                return res.send(`
+                    <h2>Login failed: Incorrect password.</h2>
+                    <form action="${req.headers.referer || './login'}" method="get">
+                        <button type="submit">Go Back</button>
+                    </form>
+                `); // Add a button to return to the previous page
             }
         });
     });
@@ -140,4 +152,4 @@ router.get('/', (req, res) => {
 });
 
 // Export the router object so index.js can access it
-module.exports = router;
+module.exports = router; 
