@@ -1,199 +1,220 @@
-/* Import a gamer font */
+/* Import a gamer font for a retro gaming style */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    background-color: black;
-    color: white; /* Default text color for better contrast on a black background */
-    font-family: 'Press Start 2P', cursive; /* Apply gamer font to the entire body */
+    background-color: black; /* Black background for the body */
+    color: white; /* White text for good contrast */
+    font-family: 'Press Start 2P', cursive; /* Apply gamer-style font */
 }
 
 h1 {
     font-family: 'Press Start 2P', cursive; /* Apply gamer font to the heading */
-    font-size: 23px;
-    color: blue; /* Blue for h1 headings */
+    font-size: 23px; /* Font size for h1 */
+    color: blue; /* Blue color for h1 heading */
     margin-bottom: 20px; /* Add space below h1 */
 }
 
 h2 {
     font-family: 'Press Start 2P', cursive; /* Apply gamer font to the heading */
-    font-size: 20px;
-    color: yellow; /* Yellow for h2 headings */
+    font-size: 20px; /* Font size for h2 */
+    color: yellow; /* Yellow color for h2 heading */
     margin-bottom: 20px; /* Add space below h2 */
 }
 
 p, li {
-    font-family: 'Press Start 2P', cursive; /* Apply gamer font to the paragraphs */
-    color: white; /* Ensure paragraphs and list items are readable on a black background */
+    font-family: 'Press Start 2P', cursive; /* Apply gamer font to paragraphs and list items */
+    color: white; /* White text for readability on black background */
 }
 
 ul {
-    padding-left: 20px; /* Add some left padding to align the list */
+    padding-left: 20px; /* Indent the list for better structure */
 }
 
 li {
-    margin-bottom: 10px; /* Add space between each list item */
-    line-height: 1.8; /* Increase line height for more vertical spacing */
+    margin-bottom: 10px; /* Add spacing between list items */
+    line-height: 1.8; /* Increase line height for better readability */
 }
 
-/* Links styling */
+/* Link styling for unvisited links */
 a:link {
-    color: blue; /* Blue for unvisited links */
-    text-decoration: none;
-    padding: 5px;
+    color: blue; /* Blue color for unvisited links */
+    text-decoration: none; /* Remove underline for a clean look */
+    padding: 5px; /* Add padding around links for better touch targets */
 }
 
-/* visited link */
+/* Visited link styling */
 a:visited {
-    color: darkblue; /* Slightly darker blue for visited links */
+    color: darkblue; /* Dark blue for visited links */
     text-decoration: none;
     padding: 5px;
 }
 
-/* mouse over link */
+/* Hover effect for links */
 a:hover {
-    color: black; /* Black text color on hover for contrast */
-    text-decoration: none;
-    background-color: yellow; /* Highlight link background in yellow */
+    color: black; /* Change text color to black on hover */
+    background-color: yellow; /* Highlight background in yellow on hover */
+    text-decoration: none; /* Remove underline on hover */
     padding: 5px;
 }
 
-/* selected link */
+/* Active link styling (when clicked) */
 a:active {
-    color: yellow; /* Yellow for active links */
+    color: yellow; /* Yellow color for active links */
     text-decoration: none;
     padding: 5px;
 }
 
-/* Taskbar styles */
+/* Taskbar style */
 .taskbar {
     background-color: blue; /* Blue background for the taskbar */
-    color: yellow; /* Yellow text in the taskbar */
-    padding: 10px; /* Add some spacing inside the taskbar */
-    display: flex; /* Align items horizontally */
-    justify-content: space-around; /* Space items evenly across the width */
+    color: yellow; /* Yellow text color in the taskbar */
+    padding: 10px; /* Padding around the taskbar content */
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-around; /* Distribute items evenly */
     align-items: center; /* Center items vertically */
 }
 
 .taskbar a {
-    color: yellow; /* Yellow links inside the taskbar */
+    color: yellow; /* Yellow color for taskbar links */
     text-decoration: none; /* Remove underline */
-    padding: 10px; /* Add some padding around links */
+    padding: 10px; /* Padding around links in the taskbar */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .taskbar a:hover {
-    color: black; /* Text turns black when hovered */
-    background-color: yellow; /* Background turns yellow when hovered */
-    text-decoration: underline; /* Underline links on hover for better feedback */
+    color: black; /* Change text to black on hover */
+    background-color: yellow; /* Change background to yellow on hover */
+    text-decoration: underline; /* Underline links on hover */
 }
 
-/* Main menu links below the taskbar */
+/* Main menu link styling */
 p a {
     color: blue; /* Default color for main menu links */
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
     padding: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for main menu links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
 }
 
 /* Hover effect for main menu links */
 p a:hover {
-    color: black; /* Text turns black on hover */
-    background-color: yellow; /* Background turns yellow on hover */
-    text-decoration: underline; /* Underline links on hover for better feedback */
+    color: black; /* Change text color to black on hover */
+    background-color: yellow; /* Change background color to yellow on hover */
+    text-decoration: underline; /* Underline links on hover */
 }
 
-/* Style for input fields (search boxes) to match the website theme */
+/* Style for input fields (text fields) */
 input[type="text"] {
-  background-color: black; /* Black background to match the overall theme */
-  color: yellow; /* Yellow text to match the theme */
+  background-color: black; /* Black background for text input */
+  color: yellow; /* Yellow text color */
   font-family: 'Press Start 2P', cursive; /* Apply gamer font */
-  font-size: 16px; /* Set the font size */
-  border: 2px solid blue; /* Blue border to match the theme */
-  padding: 10px; /* Add some padding for a better user experience */
-  width: 250px; /* Set a width for the input fields */
-  margin: 10px 0; /* Add space between input fields and surrounding elements */
+  font-size: 16px; /* Font size for input fields */
+  border: 2px solid blue; /* Blue border around input */
+  padding: 10px; /* Padding for better usability */
+  width: 250px; /* Set width for input field */
+  margin: 10px 0; /* Space between input fields and surrounding elements */
   border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition on hover/focus */
 }
 
-/* Focus effect for input fields */
+/* Focus effect for text input fields */
 input[type="text"]:focus {
   background-color: yellow; /* Change background to yellow when focused */
-  color: black; /* Text turns black when focused */
-  border-color: black; /* Border turns black when focused */
+  color: black; /* Change text color to black */
+  border-color: black; /* Change border to black */
 }
 
-/* Style for password input field to match the website theme */
+/* Style for password input fields */
 input[type="password"] {
-  background-color: black; /* Black background to match the overall theme */
-  color: yellow; /* Yellow text to match the theme */
-  font-family: 'Press Start 2P', cursive; /* Apply gamer font */
-  font-size: 16px; /* Set the font size */
-  border: 2px solid blue; /* Blue border to match the theme */
-  padding: 10px; /* Add some padding for better user experience */
-  width: 250px; /* Set a width for the input fields */
-  margin: 10px 0; /* Add space between input fields and surrounding elements */
-  border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+  background-color: black;
+  color: yellow;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  border: 2px solid blue;
+  padding: 10px;
+  width: 250px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Focus effect for password input fields */
 input[type="password"]:focus {
-  background-color: yellow; /* Change background to yellow when focused */
-  color: black; /* Text turns black when focused */
-  border-color: black; /* Border turns black when focused */
+  background-color: yellow;
+  color: black;
+  border-color: black;
 }
 
-/* Style for the submit button to match the theme */
+/* Style for submit buttons */
 input[type="submit"] {
-  background-color: blue; /* Blue background for the submit button */
+  background-color: blue; /* Blue background for submit button */
   color: yellow; /* Yellow text color */
   font-family: 'Press Start 2P', cursive; /* Apply gamer font */
-  font-size: 16px; /* Adjust font size */
+  font-size: 16px;
   border: none; /* Remove default border */
-  padding: 10px 20px; /* Add padding around the button */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  padding: 10px 20px; /* Add padding to button */
+  cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px; /* Rounded corners for the button */
 }
 
-/* Button hover effect */
+/* Hover effect for submit button */
 input[type="submit"]:hover {
-  background-color: yellow; /* Yellow background on hover */
-  color: black; /* Text color changes to black on hover */
+  background-color: yellow; /* Change background to yellow on hover */
+  color: black; /* Change text to black on hover */
 }
 
-/* Button active effect */
+/* Active effect for submit button (when clicked) */
 input[type="submit"]:active {
   background-color: darkblue; /* Dark blue background when clicked */
-  color: yellow; /* Text stays yellow when clicked */
+  color: yellow; /* Yellow text when clicked */
 }
 
-/* Style for the sort dropdown to match the website theme */
+/* Style for dropdown select elements */
 select {
-    background-color: black; /* Black background to match the overall theme */
-    color: yellow; /* Yellow text color for the dropdown options */
-    font-family: 'Press Start 2P', cursive; /* Apply gamer font */
-    font-size: 16px; /* Adjust font size */
-    border: 2px solid blue; /* Blue border to match the theme */
-    padding: 10px; /* Add padding for a better user experience */
-    width: auto; /* Adjust width dynamically to fit content */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor to indicate it's interactive */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  /* Hover effect for the dropdown */
-  select:hover {
+    background-color: black; /* Black background for dropdown */
+    color: yellow; /* Yellow text for dropdown options */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    border: 2px solid blue; /* Blue border for dropdown */
+    padding: 10px;
+    width: auto; /* Allow the width to adjust based on content */
+    border-radius: 5px; /* Rounded corners for dropdown */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for dropdown */
+select:hover {
     background-color: yellow; /* Change background to yellow on hover */
-    color: black; /* Text turns black on hover */
-    border-color: black; /* Border changes to black */
-  }
-  
-  /* Dropdown menu styling when focused */
-  select:focus {
-    background-color: yellow; /* Highlight the dropdown when focused */
-    color: black; /* Text turns black for readability */
-    border-color: darkblue; /* Border changes to a darker blue */
-    outline: none; /* Remove default focus outline */
-  }  
+    color: black; /* Change text to black */
+    border-color: black; /* Change border to black */
+}
+
+/* Focus effect for dropdown when selected */
+select:focus {
+    background-color: yellow; /* Change background to yellow when focused */
+    color: black; /* Change text to black */
+    border-color: darkblue; /* Dark blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Style for number input fields */
+input[type="number"] {
+  background-color: black; /* Black background for number input */
+  color: yellow; /* Yellow text color */
+  font-family: 'Press Start 2P', cursive; /* Apply gamer font */
+  font-size: 16px;
+  border: 2px solid blue;
+  padding: 10px;
+  width: 250px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus effect for number input fields */
+input[type="number"]:focus {
+  background-color: yellow;
+  color: black;
+  border-color: black;
+}
