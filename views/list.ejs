@@ -1,11 +1,10 @@
 <!doctype html>
 <html>
   <head>
-    <title>Welcome to <%=shopData.shopName%></title>
+    <title>Welcome to <%= shopData.shopName %></title>
     <link rel="stylesheet" type="text/css" href="/main.css" />
   </head>
   <body>
-    <!-- Taskbar Header -->
     <div class="taskbar"> 
       <a href="/">Home</a>
       <a href="users/login">Login</a>
@@ -14,19 +13,26 @@
       <a href="games/list">Games List</a>
     </div>
 
-    <!-- Main Content -->
-    <h1><%=shopData.shopName%> Shop</h1>
+    <h1><%= shopData.shopName %> Shop</h1>
     <h2>Here are the games that we sell:</h2>
 
-    <form action="search_result" method="GET">
-      <p>What game do you want?</p>
-      <input id="search_box" type="text" name="search_text">
-      <input type="submit" value="Search" >
+    <!-- Sorting Options -->
+    <form action="/games/list" method="GET">
+      <label for="sortBy" style="font-size: 16px; color: yellow;">Sort By:</label>
+      <select name="sortBy" id="sortBy" onchange="this.form.submit()">
+        <option value="default" <%= sortBy === 'default' ? 'selected' : '' %>>Default</option>
+        <option value="newest" <%= sortBy === 'newest' ? 'selected' : '' %>>Newly Added Games</option>
+        <option value="a_to_z" <%= sortBy === 'a_to_z' ? 'selected' : '' %>>A to Z</option>
+        <option value="z_to_a" <%= sortBy === 'z_to_a' ? 'selected' : '' %>>Z to A</option>
+        <option value="price_asc" <%= sortBy === 'price_asc' ? 'selected' : '' %>>Increasing in Price</option>
+        <option value="price_desc" <%= sortBy === 'price_desc' ? 'selected' : '' %>>Decreasing in Price</option>
+      </select>
     </form>
 
+    <!-- Game List -->
     <ul>
       <% availableGames.forEach(function(game) { %>
-        <li><%= game.name %>, £<%=game.price%> </li>
+        <li><%= game.name %>, £<%= game.price %> </li>
       <% }) %>
     </ul>
   </body>

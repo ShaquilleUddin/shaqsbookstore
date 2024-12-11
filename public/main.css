@@ -1,4 +1,4 @@
-/* Import a "gamer-like" font */
+/* Import a gamer font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
@@ -168,3 +168,32 @@ input[type="submit"]:active {
   background-color: darkblue; /* Dark blue background when clicked */
   color: yellow; /* Text stays yellow when clicked */
 }
+
+/* Style for the sort dropdown to match the website theme */
+select {
+    background-color: black; /* Black background to match the overall theme */
+    color: yellow; /* Yellow text color for the dropdown options */
+    font-family: 'Press Start 2P', cursive; /* Apply gamer font */
+    font-size: 16px; /* Adjust font size */
+    border: 2px solid blue; /* Blue border to match the theme */
+    padding: 10px; /* Add padding for a better user experience */
+    width: auto; /* Adjust width dynamically to fit content */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor to indicate it's interactive */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the dropdown */
+  select:hover {
+    background-color: yellow; /* Change background to yellow on hover */
+    color: black; /* Text turns black on hover */
+    border-color: black; /* Border changes to black */
+  }
+  
+  /* Dropdown menu styling when focused */
+  select:focus {
+    background-color: yellow; /* Highlight the dropdown when focused */
+    color: black; /* Text turns black for readability */
+    border-color: darkblue; /* Border changes to a darker blue */
+    outline: none; /* Remove default focus outline */
+  }  
