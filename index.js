@@ -1,28 +1,24 @@
-// Import express and ejs
+// Import required modules
 var express = require('express');
 var ejs = require('ejs');
-
-// Import mysql module
 var mysql = require('mysql2');
-
-// Import express-session module
 var session = require('express-session');
-
-// Import express-validator module
 var validator = require('express-validator');
+const expressSanitizer = require('express-sanitizer');
+const path = require('path');  // Add this line to work with paths
 
 // Create the express application object
 const app = express();
 const port = 8000;
-
-// Import express-sanitizer module
-const expressSanitizer = require('express-sanitizer');
 
 // Create an input sanitizer
 app.use(expressSanitizer());
 
 // Tell Express that we want to use EJS as the templating engine
 app.set('view engine', 'ejs');
+
+// Set the path to the views directory (ensure it's correct)
+app.set('views', path.join(__dirname, 'views'));  // Explicitly set the views directory path
 
 // Set up the body parser
 app.use(express.urlencoded({ extended: true }));
@@ -47,6 +43,7 @@ const db = mysql.createConnection({
     password: 'qwertyuiop',
     database: 'shaqsgamestore'
 });
+
 // Connect to the database
 db.connect((err) => {
     if (err) {
@@ -76,4 +73,4 @@ const currencyRoutes = require('./routes/currency');
 app.use('/currency', currencyRoutes);
 
 // Start the web app listening
-app.listen(port, () => console.log(`Node app listening on port ${port}!`));
+app.listen(port, () => console.log(`Node app listening on port ${port}!`)); 
