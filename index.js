@@ -76,5 +76,11 @@ app.use('/currency', currencyRoutes);
 const apiRoutes = require('./routes/api'); // Adjust path if necessary
 app.use('/api', apiRoutes);
 
+// Error handling middleware function to catch any errors and log them in the console
+app.use((err, req, res, next) => {
+    console.error(err.stack); // Log the error to the console
+    res.status(500).send('Error! Something broke!'); // Send a 500 status code and the error message
+});
+
 // Start the web app listening
 app.listen(port, () => console.log(`Node app listening on port ${port}!`));
