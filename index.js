@@ -72,5 +72,9 @@ app.use('/games', booksRoutes);
 const currencyRoutes = require('./routes/currency');
 app.use('/currency', currencyRoutes);
 
+// Load the route handlers for /api (API routes)
+const apiRoutes = require('./routes/api'); // Adjust path if necessary
+app.use('/api', apiRoutes);
+
 // Start the web app listening
 app.listen(port, () => console.log(`Node app listening on port ${port}!`));

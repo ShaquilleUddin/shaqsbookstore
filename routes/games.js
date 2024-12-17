@@ -48,22 +48,22 @@ router.get('/list', redirectLogin, function (req, res, next) {
     let sortBy = req.query.sortBy || 'default'; // Default to 'default' if no sorting is specified
     let sqlquery = "SELECT * FROM games"; // Base query
 
-    // Append ORDER BY clause based on the sortBy parameter
+    // Add sorting to the query (default is no sorting)
     switch (sortBy) {
         case 'newest':
-            sqlquery += " ORDER BY id DESC";
+            sqlquery += " ORDER BY id DESC"; // Sort by newest first
             break;
         case 'a_to_z':
-            sqlquery += " ORDER BY name ASC";
+            sqlquery += " ORDER BY name ASC"; // Sort alphabetically
             break;
         case 'z_to_a':
-            sqlquery += " ORDER BY name DESC";
+            sqlquery += " ORDER BY name DESC"; // Sort reverse alphabetically
             break;
         case 'price_asc':
-            sqlquery += " ORDER BY price ASC";
+            sqlquery += " ORDER BY price ASC"; // Sort by price ascending
             break;
         case 'price_desc':
-            sqlquery += " ORDER BY price DESC";
+            sqlquery += " ORDER BY price DESC"; // Sort by price descending
             break;
     }
 
@@ -89,7 +89,7 @@ router.get('/addgame', redirectLogin, function (req, res, next) {
 // Route to handle adding a new game to the database
 router.post('/gameadded', redirectLogin, function (req, res, next) {
     // Saving data in the database
-    let sqlquery = "INSERT INTO games (name, price) VALUES (?,?)";
+    let sqlquery = "INSERT INTO games (name, price) VALUES (?,?)"; 
     // Execute SQL query
     let newrecord = [req.body.name, req.body.price];
     db.query(sqlquery, newrecord, (err, result) => {
@@ -103,7 +103,7 @@ router.post('/gameadded', redirectLogin, function (req, res, next) {
 
 // Route to render bargain games (price < 20), requires login
 router.get('/bargaingames', redirectLogin, function (req, res, next) {
-    let sqlquery = "SELECT * FROM games WHERE price < 20";
+    let sqlquery = "SELECT * FROM games WHERE price < 20"; 
     db.query(sqlquery, (err, result) => {
         if (err) {
             next(err);
@@ -116,4 +116,4 @@ router.get('/bargaingames', redirectLogin, function (req, res, next) {
 });
 
 // Export the router object so index.js can access it
-module.exports = router;
+module.exports = router; 
