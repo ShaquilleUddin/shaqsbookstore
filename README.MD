@@ -40,9 +40,14 @@ app.locals.shopData = { shopName: "Shaq's Game Store" };
 Change "Shaq's Game Store" to whatever you wish the store name to be. 
 The home page will display "Welcome to xyz" 
 
+Viewing API: 
+To view the API type... 
+/api/games 
+at the end of your link.
+
 Changing API Keys: 
 Go to the following websites and replace the keys 
   - OpenWeatherMap API
   - CurrencyLayer API 
 OpenWeatherMap API key can be changed in weather.js, line 14. 
-CurrencyLayer API key can be changed in currency.js, line 17.
+CurrencyLayer API key can be changed in currency.js, line 17. 
